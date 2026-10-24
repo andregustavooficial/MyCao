@@ -52,3 +52,10 @@ Registro rápido de coisas que não acontecem sempre, mas que o veterinário per
 - **Automático:** quando uma contagem de frequência fica acima do limite definido, o app cria a intercorrência sozinho (com o valor medido), além de manter a contagem no histórico normal.
 - **"Última vez que…":** para cada tipo, mostra a data da última ocorrência e quantas vezes aconteceu no período (7, 30, 90 dias).
 - **Conecta com:** Linha do tempo, Prontuário (seção "Desde a última consulta"), Medicamentos (ver se aumentou/diminuiu após troca), Painel (alerta).
+
+## Frequência respiratória — detalhes
+- **Objetivo:** monitorar sinais de acúmulo de líquido no pulmão (edema), por causa do sopro cardíaco.
+- **Medida:** apenas frequência **respiratória** em repouso/dormindo (sem frequência cardíaca — não há aparelho).
+- **Limite de alerta:** **acima de 30 respirações por minuto** (valor padrão, editável conforme orientação do veterinário).
+- Acima do limite → gera intercorrência automática + destaque no Painel e no Prontuário; sugerir repetir a contagem após alguns minutos para confirmar.
+- **Referência de interação:** app Cardiocão (contagem por toque com ícone de coração). Telas de referência serão enviadas depois.
