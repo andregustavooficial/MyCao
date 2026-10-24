@@ -12,7 +12,7 @@
 - **Botões e ícones:** mistura moderada de azul e laranja conforme o contexto (laranja = ação de cuidado/registro).
 - **Ícones arredondados** (traço com pontas arredondadas, dentro de quadrados arredondados).
 - **Cards:** retângulos/quadrados com cantos bem arredondados (18–22px).
-- **Barra inferior (5 abas):** Início · Agenda · Respirar · Diário · Mais. A aba **Mais** dá acesso às demais telas (Perfil/Prontuário, Remédios, Exames, Vacinas, Intercorrências, Ajustes).
+- **Barra inferior (5 abas), flutuante:** cápsula azul-escura (#0D47A1) com cantos arredondados e sombra; a aba ativa se expande numa pílula clara (#E3F2FD) com ícone + nome em laranja escuro (#C2410C); as outras mostram só o ícone. Abas: Início · Agenda · Medir · Diário · Mais. A aba **Mais** dá acesso às demais telas (Perfil/Prontuário, Remédios, Exames, Vacinas, Intercorrências, Ajustes).
 - **Cores de status:**
   - **Verde** — positivo, normal, melhora, gráficos favoráveis.
   - **Laranja** — atenção, cuidado, informação importante.
