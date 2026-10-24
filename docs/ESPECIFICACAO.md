@@ -65,3 +65,10 @@ Registro rápido de coisas que não acontecem sempre, mas que o veterinário per
 - **Limite de alerta:** **acima de 30 respirações por minuto** (valor padrão, editável conforme orientação do veterinário).
 - Acima do limite → gera intercorrência automática + destaque no Painel e no Prontuário; sugerir repetir a contagem após alguns minutos para confirmar.
 - **Referência de interação:** app Cardiocão (contagem por toque com ícone de coração). Telas de referência serão enviadas depois.
+
+### Referência Cardiocão (telas recebidas) — o que adaptar
+- Contador com círculos concêntricos ao redor do botão de toque; cards "Respirações" e "Tempo" no topo.
+- Estatísticas **mín / média / máx** de rpm.
+- Botão central elevado **Medir** na barra inferior (adotado: botão azul elevado no meio da barra).
+- Tela **"Como medir?"**: por que medir, faixa normal, passo a passo (peito sobe + desce = 1 respiração, cão dormindo/calmo).
+- **Frequência de medição:** ao iniciar ou trocar medicamento, medir diariamente por 10 dias (lembrete automático); depois conforme orientação do veterinário.
