@@ -1,4 +1,11 @@
 // MyCão — protótipo navegável (dados de exemplo; nada é salvo ainda)
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm'
+
+// Mesmo projeto e mesmo usuário do Supabase do My Stats.
+// A chave anon é pública por design; os dados serão protegidos pelo RLS.
+const SUPABASE_URL = 'https://tolmprwwnishdohhhuad.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRvbG1wcnd3bmlzaGRvaGhodWFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI2MzA4NjEsImV4cCI6MjEwODIwNjg2MX0.iOfEVjMH8bIQNr9V6Y8CGJA4xsUWpJ0oomNnzAXtfdA'
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
 const $app = document.getElementById('app')
 const $tabs = document.getElementById('tabs')
@@ -50,7 +57,32 @@ function renderTabs(active) {
   }).join('')}</div>`
 }
 
+function renderLogin() {
+  $tabs.innerHTML = ''
+  $app.innerHTML = `
+    <div class="page login">
+      <div class="login-logo">${heartFill(44)}</div>
+      <h1>MyCão</h1>
+      <p class="lead">Entre com o seu usuário do Supabase.</p>
+      <form id="login" class="col" style="gap:12px">
+        <label class="field"><span>E-mail</span><input name="email" type="email" autocomplete="username" required></label>
+        <label class="field"><span>Senha</span><input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="btn primary press" type="submit">Entrar</button>
+      </form>
+    </div>`
+  document.getElementById('login').addEventListener('submit', async ev => {
+    ev.preventDefault()
+    const f = new FormData(ev.target)
+    const btn = ev.target.querySelector('button')
+    btn.disabled = true
+    const { error } = await sb.auth.signInWithPassword({ email: f.get('email'), password: f.get('password') })
+    btn.disabled = false
+    if (error) toast('Não foi possível entrar: ' + error.message)
+  })
+}
+
 function render() {
+  if (!signedIn) return renderLogin()
   const r = route()
   const screen = SCREENS[r] || SCREENS.inicio
   stopTimer()
@@ -205,6 +237,7 @@ const SCREENS = {
         <div class="kv"><span>Limite de respiração</span><span class="small" style="font-size:15px">30 rpm ›</span></div>
         <div class="kv"><span>Google Agenda</span><span class="b" style="color:var(--green)">Conectado</span></div>
         <div class="kv"><span>Backup e família</span><span class="small" style="font-size:15px">›</span></div>
+        <button class="kv" data-act="logout" style="width:100%;text-align:left;color:var(--red)"><span>Sair</span></button>
       </div>
       <span class="small" style="text-align:center;font-size:12px">Protótipo · versão ${VERSION === '__' + 'V__' ? 'local' : VERSION}</span>
     </div>`,
@@ -396,10 +429,20 @@ const ACTIONS = {
   save() { toast('Salvo no diário (exemplo)'); location.hash = '#/diario' },
   copy() { toast('Resumo copiado (exemplo)') },
   soon() { toast('Em breve') },
+  logout() { sb.auth.signOut() },
 }
 
 window.addEventListener('hashchange', render)
-render()
+
+// ---------- Início da sessão ----------
+
+let signedIn = null
+sb.auth.onAuthStateChange((_event, session) => {
+  const now = !!session
+  if (now === signedIn) return
+  signedIn = now
+  render()
+})
 
 // Evita zoom com dois dedos no iPhone
 document.addEventListener('touchmove', e => { if (e.touches.length > 1) e.preventDefault() }, { passive: false })
