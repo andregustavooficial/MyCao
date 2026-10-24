@@ -12,7 +12,7 @@ Assim qualquer tela pode cruzar dados com outra — ex.: "a glicemia melhorou de
 | # | Tela | Funcionalidades principais | Conecta com |
 |---|------|---------------------------|-------------|
 | 1 | **Início / Painel** | Resumo do dia, próximos compromissos, remédios do dia, última frequência respiratória, alertas | Todas |
-| 2 | **Perfil do Mike** | Dados básicos, peso, condições de saúde (lista a definir), alergias, veterinários | Todas |
+| 2 | **Perfil do Mike (compacto)** | Só o básico: foto, idade, raça, peso, tamanho, alergias, veterinários | Todas |
 | 3 | **Frequência respiratória** | Contador por toque (cronômetro 30s/60s → rpm), histórico, gráfico, alerta acima do limite definido pelo veterinário, anotação (dormindo/repouso) | Medicamentos, Painel, Linha do tempo |
 | 4 | **Agenda** | Consultas, exames, retornos, banho/tosa; lembretes; sincronização com Google Agenda | Exames, Vacinas, Medicamentos |
 | 5 | **Vacinas** | Histórico de vacinas, lote, veterinário, data da próxima dose → gera lembrete na agenda | Agenda |
@@ -23,6 +23,12 @@ Assim qualquer tela pode cruzar dados com outra — ex.: "a glicemia melhorou de
 | 10 | **Prontuário / Resumo para consulta** | Ficha sempre atualizada automaticamente (ver detalhes abaixo) | Todas |
 
 ## Prontuário / Resumo para consulta
+Separado do Perfil (decisão ainda pode ser revista). É um **relatório pronto para copiar e enviar ao veterinário**.
+Tamanho variável: cobre o período **desde a última consulta**, que pode ser de poucos dias ou de 30–45+ dias — quanto mais tempo, mais extenso.
+- Período ajustável (desde a última consulta / últimos 30, 60, 90 dias / personalizado).
+- Versão **resumida** (só o essencial) e **completa**.
+- Botões **Copiar texto** (para WhatsApp/e-mail) e **Gerar PDF**.
+
 Um "prontuário" do Mike, montado **automaticamente** a partir dos dados das outras telas, para levar ao veterinário e não esquecer nada.
 
 - **Identificação:** nome, raça, idade, peso atual (e variação recente), castrado, microchip, alergias.
