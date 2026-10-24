@@ -42,3 +42,13 @@ Um "prontuário" do Mike, montado **automaticamente** a partir dos dados das out
 - Só o Mike ou suporte a vários pets?
 - Dados só no celular ou na nuvem (backup / compartilhar com família ou vet)?
 - Lista de problemas de saúde do Mike (vai definir alertas e indicadores padrão).
+
+## Intercorrências (registro de ocorrências fora do normal)
+Registro rápido de coisas que não acontecem sempre, mas que o veterinário pergunta ("quando foi a última vez que vomitou?").
+
+- **Registro rápido:** 2–3 toques, com data/hora automática (editável).
+- **Tipos pré-definidos** (lista editável): vômito, recusou comida, fezes moles/diarreia, sangue nas fezes/urina, dor, tosse, engasgo/espirro reverso, cansaço/fraqueza, desmaio, convulsão, falta de ar, frequência respiratória/cardíaca acima do normal, outro.
+- **Detalhes opcionais:** intensidade (leve/moderada/grave), duração, descrição, foto/vídeo, possível causa.
+- **Automático:** quando uma contagem de frequência fica acima do limite definido, o app cria a intercorrência sozinho (com o valor medido), além de manter a contagem no histórico normal.
+- **"Última vez que…":** para cada tipo, mostra a data da última ocorrência e quantas vezes aconteceu no período (7, 30, 90 dias).
+- **Conecta com:** Linha do tempo, Prontuário (seção "Desde a última consulta"), Medicamentos (ver se aumentou/diminuiu após troca), Painel (alerta).
